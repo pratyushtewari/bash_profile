@@ -1,0 +1,61 @@
+[core]
+	excludesfile = /Users/ptewari/.gitignore_global
+[difftool "sourcetree"]
+	cmd = /usr/local/bin/bcomp \"$LOCAL\" \"$REMOTE\"
+	path = -ro
+[mergetool "sourcetree"]
+	cmd = /usr/local/bin/bcomp \"$LOCAL\" \"$REMOTE\" \"$BASE\" \"$MERGED\"
+	trustExitCode = true
+[user]
+	name = Pratyush Tewari
+	email = ptewari@vidyo.com
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+[credential]
+	helper = osxkeychain
+[commit]
+	template = /Users/ptewari/.stCommitMsg
+[alias]
+        lol = log --graph --decorate --pretty=oneline --abbrev-commit
+        lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+        c = checkout
+        b = branch
+        s = status
+	p = pull
+	sup = push --set-upstream origin 
+[color]
+	branch = always
+	diff = always
+	status = always
+	ui = always
+	interactive = always
+	grep = always
+	pager = true
+	decorate = always
+	showbranch = always
+
+[color "branch"]
+  	current = magenta
+  	remote = yellow
+
+[color "diff"]
+  	meta = yellow bold
+  	frag = magenta bold
+  	old = red bold
+  	new = green bold
+	
+[color "status"]
+  	added = yellow
+  	changed = green
+  	untracked = cyan
+[diff]
+	tool = bc3
+[difftool "bc3"]
+	trustExitCode = true
+[merge]
+	tool = bc3
+[mergetool "bc3"]
+	trustExitCode = true
